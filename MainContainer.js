@@ -6,21 +6,12 @@ import LaunchScreen from './navigation/LaunchScreen';
 import LogIn from './navigation/LogIn';
 import SignUp from './navigation/SignUp'
 const Stack = createNativeStackNavigator();
-export default function App() {
+export default function MainContainer() {
   return (
    
     <NavigationContainer>
     <Stack.Navigator>
-      <Stack.Screen name="launch" component={LaunchScreen}
-           options={() => ({
-            tabBarStyle: {
-              display: "none",
-            },
-  
-            tabBarButton: () => null,
-            headerShown: false,
-          })}
-      />
+      <Stack.Screen name="launch" component={LaunchScreen} />
       <Stack.Screen name="login" component={LogIn} />
       <Stack.Screen name="signup" component={SignUp} />
     </Stack.Navigator>
