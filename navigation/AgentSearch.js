@@ -16,7 +16,7 @@ const MainCont =()=>{
 
 <TouchableOpacity onPress={next} style={{height:40,width:120,backgroundColor:'#3EC6FF',marginTop:40,
 borderWidth:1,borderRadius:10,borderColor:'#3EC6FF',marginRight:10,alignSelf:'center'}}><Text 
-style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'white'}}>Save</Text></TouchableOpacity>
+style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'white'}}>Next</Text></TouchableOpacity>
         </View>
     )
 }

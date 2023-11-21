@@ -1,24 +1,260 @@
-import React from "react";
-import { View , Button ,Image ,ScrollView,TextInput,Dimensions,TouchableOpacity,Text } from "react-native";
+import React, { useState } from "react";
+import { View , Button ,Image ,ScrollView,TextInput,Dimensions,TouchableOpacity,Text,TouchableWithoutFeedback } from "react-native";
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height
+import { IndexPath, Layout, Select, SelectItem ,Input} from '@ui-kitten/components';
 export default function HomeScreen({navigation}){
-
+    const [selectedIndex, setSelectedIndex] = useState(0)
     const next=()=>{
 navigation.navigate('dashboard')
     }
+
+    const renderIcon = (props)=> (
+        <TouchableWithoutFeedback >
+        <Image
+                  style={
+                    { width: 16, height: 16}
+                  }
+                  source={require("../assets/se.png")}
+                  
+                />
+        </TouchableWithoutFeedback>
+      )
+      const renderIconRight = (props)=> (
+        <TouchableWithoutFeedback >
+        <Image
+                  style={
+                    { width: 16, height: 16}
+                  }
+                  source={require("../assets/filter.png")}
+                  
+                />
+        </TouchableWithoutFeedback>
+      )
+
     const mainCont=()=>{
         return(
-            <View style={{alignSelf:'center',marginTop:100}}>
-<View style={{width:328,height:400,backgroundColor:"#D9D9D9",borderWidth:1,borderRadius:10,borderColor:"#D9D9D9"}}></View>
-<TouchableOpacity onPress={next} style={{width:201,height:40,backgroundColor:"#D9D9D9",
-borderWidth:1,borderRadius:10,borderColor:"#D9D9D9",marginTop:30,alignSelf:'center'}}></TouchableOpacity>
+<View>
+    <View style={{flex:1,flexDirection:"row"}}>
+        <TouchableOpacity onPress={()=>{navigation.navigate('profile')}} style={{flexDirection:"row",marginTop:50,marginLeft:20}}>
+    <Image
+                  style={
+                    { width: 50, height: 50}
+                  }
+                  source={require("../assets/profile10.png")}
+                />
+                <Text style={{marginLeft:10,marginTop:15,fontSize:18,fontWeight:'500'}}>Biruk</Text>
+                </TouchableOpacity>
+
+
+                <View style={{flexDirection:"row",marginTop:50,marginLeft:20,width:screenWidth/2,justifyContent:'flex-end',right:-20}}>
+    
+                <Select
+        selectedIndex={selectedIndex}
+        onSelect={index => setSelectedIndex(index)}
+        style={{width:100,backgroundColor:'white'}}
+      >
+        <SelectItem title='Amharic' />
+        <SelectItem title='English' />
+       
+      </Select>
+                <Image
+                  style={
+                    { width: 24, height: 24,marginTop:10}
+                  }
+                  source={require("../assets/ring.png")}
+                />
+                </View>
+
+    </View>
+</View>
+        )
+    }
+
+    const card=()=>{
+        return(
+            <View>
+                <View style={{flexDirection:'row',width:330,alignSelf:'center',backgroundColor:'#D3F8F6',marginTop:40,
+            borderWidth:1,borderRadius:10,borderColor:'#D3F8F6'
+            }}>
+                <View style={{width:100,height:100,justifyContent:'center',alignSelf:"center"}}>
+             <Text style={{textAlign:'center'}}>Candidates</Text>       
+             <Text style={{textAlign:'center',fontSize:16,top:5}}>50</Text>   
+</View>
+<View style={{width:100,height:100,justifyContent:'center',alignSelf:"center",marginLeft:10}}>
+             <Text style={{textAlign:'center'}}>Hired</Text>       
+             <Text style={{textAlign:'center',fontSize:16,top:5}}>10</Text>   
+</View>
+<View style={{width:100,height:100,justifyContent:'center',marginLeft:10}}>
+             <Text style={{textAlign:'center'}}>Job openings</Text>       
+             <Text style={{textAlign:'center',fontSize:16,top:5}}>5</Text>   
+</View>
+
+                </View>
+                
+
+
+<Input
+            placeholder="Search clients or candidates "
+            accessoryLeft={renderIcon}
+            accessoryRight={renderIconRight}
+                style={{
+                    width:324,
+                  height:37,
+                  backgroundColor: "white",
+                  elevation: 5,
+                  marginTop:24,
+                  borderWidth:1,
+                  borderRadius:10,
+                  borderColor:'white',
+                  alignSelf:'center'
+                }}
+              />
+
+<TouchableOpacity style={{backgroundColor:"#CDDFF7",width:320,height:49, borderWidth:1,
+                  borderRadius:10,
+                  borderColor:'#CDDFF7',
+                  alignSelf:'center',marginTop:24,flexDirection:'row'}}
+                  onPress={()=>{navigation.navigate('addjob')}}
+                  >
+                    
+<Text style={{flex:1,textAlignVertical:"center",fontSize:16,marginLeft:10}}>Add job openings</Text>
+<Image
+                  style={
+                    { width: 25, height: 25,marginRight:10,top:10}
+                  }
+                  source={require("../assets/plus.png")}
+                  
+                />
+</TouchableOpacity>
             </View>
         )
     }
+
+    const jobPost =()=>{
+        return(
+            <View style={{marginTop:24}}>
+<Text style={{fontSize:18 ,marginLeft:30,color:'#273469',fontWeight:'700',marginBottom:20}}>Your Job posts</Text>
+<View style={{width:340,height:113,backgroundColor:'#F4F0FF',alignSelf:'center',borderWidth:1,borderRadius:10,borderColor:'#F4F0FF'}}>
+
+<View style={{flex:1,flexDirection:'row',marginTop:20,marginLeft:10,maxHeight:30}}>
+           <Text style={{fontSize:14,color:'#273469',fontWeight:'500'}}>Customer Service Representative </Text>
+         <View style={{marginLeft:80}}>
+           <Image
+                  style={
+                    { width: 24, height: 24}
+                  }
+                  source={require("../assets/dot.png")}
+                />
+                </View>
+           </View>
+           
+
+           <View style={{flexDirection:'row',marginHorizontal:10}}>
+            
+           <Image
+                  style={
+                    { width: 16, height: 16}
+                  }
+                  source={require("../assets/clock.png")}
+                />
+                <Text style={{fontSize:12,color:'#D1462F',marginLeft:5}}>Full Time</Text>
+
+                <Image
+                  style={
+                    { width: 16, height: 16,marginLeft:50}
+                  }
+                  source={require("../assets/map.png")}
+                />
+                <Text style={{fontSize:12,color:'#D1462F',marginLeft:5}}>Addis Ababa</Text>
+
+                <Image
+                  style={
+                    { width: 16, height: 16,marginLeft:40}
+                  }
+                  source={require("../assets/case.png")}
+                />
+                <Text style={{fontSize:12,color:'#D1462F',marginLeft:5}}>1-2 years</Text>
+           </View>
+
+           <View style={{flexDirection:"row",marginHorizontal:10,marginTop:10}}>
+
+            <Text style={{fontSize:14}}>Deadline: Nov 10</Text>
+            <Text style={{fontSize:14,marginLeft:20}}>Vacancies:10</Text>
+            <Image
+                  style={
+                    { width: 24, height: 24,marginLeft:20,bottom:3,marginRight:5}
+                  }
+                  source={require("../assets/banknote.png")}
+                />
+            <Text style={{fontSize:14}}>5000 ETB</Text>
+           </View>
+</View>
+        
+            </View>
+            
+        )
+    }
+
+    const candidates=()=>{
+        return(
+            <View style={{marginTop:24}}>
+<Text style={{fontSize:18 ,marginLeft:30,color:'#273469',fontWeight:'700',marginBottom:20}}>Candidates</Text>
+<View style={{width:340,height:69,backgroundColor:'#E9F1FB',alignSelf:'center',borderWidth:1,borderRadius:10,borderColor:'#F4F0FF'}}>
+
+<View style={{flex:1,flexDirection:'row',marginTop:10,marginLeft:10,maxHeight:30}}>
+           <Text style={{fontSize:14,color:'#273469',fontWeight:'500'}}>Abebe abebe</Text>
+         <View style={{marginLeft:80,marginLeft:200,top:10}}>
+         <View style={{width:30,height:30,backgroundColor:"orange",borderWidth:1,borderRadius:50,borderColor:'orange'}}>
+<Text style={{flex:1,alignSelf:'center',textAlignVertical:'center',color:"white"}}>M</Text>
+         </View>
+                </View>
+           </View>
+           
+
+           <View style={{marginHorizontal:10,marginBottom:5}}>
+    
+                <Text style={{fontSize:12}}>Job title</Text>
+             
+                <Text style={{fontSize:10,color:'grey'}}>Added on Oct 21/2023 2:30PM</Text>
+           </View>
+
+          
+</View>
+{/* second card */}
+
+<View style={{width:340,height:69,marginTop:20,backgroundColor:'#E9F1FB',alignSelf:'center',borderWidth:1,borderRadius:10,borderColor:'#F4F0FF'}}>
+
+<View style={{flex:1,flexDirection:'row',marginTop:10,marginLeft:10,maxHeight:30}}>
+           <Text style={{fontSize:14,color:'#273469',fontWeight:'500'}}>Abebe abebe</Text>
+         <View style={{marginLeft:200,top:10}}>
+         <View style={{width:30,height:30,backgroundColor:"blue",borderWidth:1,borderRadius:50,borderColor:'blue'}}>
+<Text style={{flex:1,alignSelf:'center',textAlignVertical:'center',color:"white"}}>M</Text>
+         </View>
+                </View>
+           </View>
+           
+
+           <View style={{marginHorizontal:10,marginBottom:5}}>
+    
+                <Text style={{fontSize:12}}>Job title</Text>
+             
+                <Text style={{fontSize:10,color:'grey'}}>Added on Oct 21/2023 2:30PM</Text>
+           </View>
+
+          
+</View>
+        
+            </View>
+            
+        )
+    }
     return(
-        <ScrollView>
+        <ScrollView style={{backgroundColor:'white'}} contentContainerStyle={{ flexGrow: 1 }} >
             {mainCont()}
+            {card()}
+            {jobPost()}
+            {candidates()}
         </ScrollView>
     )
 }
