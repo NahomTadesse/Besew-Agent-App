@@ -21,7 +21,7 @@ const firstScreen = ()=>{
              source={require("../assets/rec.png") }
             >
                         <Text style={{position:"absolute",bottom:0,marginBottom:200,alignSelf:'center'
-                    ,fontSize:18,color:'white',marginHorizontal:30,}}>
+                    ,fontSize:18,color:'white',marginHorizontal:30,elevation:1}}>
             {`Simplify your job placement process` }{'\n'}
             {`  and connect with employers and`} {'\n'}
             {`           candidates effortlessly.`} {'\n'}
@@ -29,7 +29,7 @@ const firstScreen = ()=>{
             </Text>
           <View style={{position:"absolute",bottom:0,marginBottom:60,alignSelf:'center'}}>
  
-<TouchableOpacity style={{backgroundColor:'#3680E1',width:250,height:48}} 
+<TouchableOpacity style={{backgroundColor:'#3680E1',width:250,height:48,borderWidth:1,borderRadius:10,borderColor:'#3680E1',}} 
 onPress={()=>{navigation.navigate('agboard')}}
 >
 <Text style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'white'}}>Next</Text>

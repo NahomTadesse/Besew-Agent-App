@@ -32,8 +32,8 @@ export default function LaunchScreen({navigation}){
 <TouchableOpacity onPress={logIn} style={{height:40,width:120,backgroundColor:'#DDDDDD',
 borderWidth:1,borderRadius:10,borderColor:'#DDDDDD',marginRight:10}}><Text style={{flex:1,textAlignVertical:'center',alignSelf:"center"}}>Log In</Text></TouchableOpacity>
 
-<TouchableOpacity onPress={signUp} style={{height:40,width:120,backgroundColor:'#3EC6FF',borderWidth:1,
-borderRadius:10,borderColor:'#3EC6FF'}}><Text style={{flex:1,textAlignVertical:'center',alignSelf:"center"}}>Sign Up</Text></TouchableOpacity>
+<TouchableOpacity onPress={signUp} style={{height:40,width:120,backgroundColor:'#3680E1',borderWidth:1,
+borderRadius:10,borderColor:'#3EC6FF'}}><Text style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'white'}}>Sign Up</Text></TouchableOpacity>
 </View>
         </ScrollView>
     )

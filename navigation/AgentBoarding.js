@@ -34,7 +34,8 @@ const thirdN =()=>{
                 <Text style={{fontSize:18,alignSelf:'center',marginTop:50}}>
                 Create your professional profile.
                 </Text>
-                <TouchableOpacity style={{marginTop:75 ,width:250,height:48,backgroundColor:"#3680E1",alignSelf:'center'}}
+                <TouchableOpacity style={{marginTop:75 ,width:250,height:48,backgroundColor:"#3680E1",alignSelf:'center',
+                borderWidth:1,borderRadius:10,borderColor:'#3EC6FF',}}
                 onPress={firstN}
                 >
                     <Text style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'white'}}>Next</Text>
@@ -55,7 +56,8 @@ const thirdN =()=>{
                 <Text style={{fontSize:18,alignSelf:'center',marginTop:50}}>
                 Add and handle candidates.
                 </Text>
-                <TouchableOpacity style={{marginTop:75 ,width:250,height:48,backgroundColor:"#3680E1",alignSelf:'center'}}
+                <TouchableOpacity style={{marginTop:75 ,width:250,height:48,backgroundColor:"#3680E1",alignSelf:'center',
+                borderWidth:1,borderRadius:10,borderColor:'#3EC6FF',}}
                 onPress={secondN}
                 >
                     <Text style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'white'}}>Next</Text>
@@ -76,7 +78,9 @@ const thirdN =()=>{
                 <Text style={{fontSize:18,alignSelf:'center',marginTop:50}}>
                 Post a job.
                 </Text>
-                <TouchableOpacity style={{marginTop:75 ,width:250,height:48,backgroundColor:'#3680E1',alignSelf:'center'}}
+                <TouchableOpacity style={{marginTop:75 ,width:250,height:48,backgroundColor:'#3680E1',alignSelf:'center',
+            borderWidth:1,borderRadius:10,borderColor:'#3EC6FF',    
+            }}
                 onPress={thirdN}
                 >
                     <Text style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'white'}}>Done</Text>

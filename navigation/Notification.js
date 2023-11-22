@@ -11,7 +11,7 @@ export default function Notification({navigation}){
    return(
     <View style={{marginLeft:10}}>
         <View style={{width:screenWidth,height:2,backgroundColor:"#CDDFF7",marginTop:30}}></View>
-  <View style={{flex:1,flexDirection:'row',marginLeft:20,height:50,marginTop:40}}>
+  <View style={{flex:1,flexDirection:'row',marginLeft:20,height:50,marginTop:30}}>
  
  <Text style={{fontSize:16,}}>Notification preference</Text>
 

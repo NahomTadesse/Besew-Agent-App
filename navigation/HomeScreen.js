@@ -255,6 +255,8 @@ navigation.navigate('dashboard')
             {card()}
             {jobPost()}
             {candidates()}
+            <TouchableOpacity onPress ={()=>{navigation.navigate('addcandid')}}
+             style={{width:100,height:40,backgroundColor:'#3680E1',alignSelf:'center',marginTop:30}}></TouchableOpacity>
         </ScrollView>
     )
 }

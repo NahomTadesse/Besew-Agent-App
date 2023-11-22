@@ -20,6 +20,7 @@ import EditPersonal from './navigation/EditPersonal'
 import Notification from './navigation/Notification';
 import Report from './navigation/Report';
 import AddJobOpening from './navigation/AddJobOpening'
+import AddCandidate from './navigation/AddCandidate'
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
@@ -107,7 +108,7 @@ export default function App() {
             headerShown: false,
           })} />
 
-<Stack.Screen name="report" component={Report}     options={() => ({
+<Stack.Screen name="addcandid" component={AddCandidate}     options={() => ({
             tabBarStyle: {
               display: "none",
             },
@@ -115,6 +116,15 @@ export default function App() {
             tabBarButton: () => null,
             headerShown: false,
           })} />
+          <Stack.Screen name="report" component={Report}     options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+
           <Stack.Screen name="addjob" component={AddJobOpening}     options={() => ({
             tabBarStyle: {
               display: "none",
