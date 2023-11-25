@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View ,AppRegistry} from 'react-native';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -21,6 +21,19 @@ import Notification from './navigation/Notification';
 import Report from './navigation/Report';
 import AddJobOpening from './navigation/AddJobOpening'
 import AddCandidate from './navigation/AddCandidate'
+import EditCandidate from './navigation/EditCandidate'
+import PostJob from './navigation/PostJob';
+import PostType from './navigation/PostType' 
+import Comission from './navigation/Comission';
+import ReportEmployer from './navigation/ReportEmployer';
+import NotificationRing from './navigation/NotificationRing';
+import BottomNav from './navigation/BottomNav';
+import Match from './navigation/Match';
+import MatchingSecond from './navigation/MatchingSecond';
+import SeeCandidate from './navigation/SeeCandidates';
+import { NativeBaseProvider, Box } from "native-base";
+import { PaperProvider } from 'react-native-paper';
+import { name as appName } from './app.json';
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
@@ -116,6 +129,15 @@ export default function App() {
             tabBarButton: () => null,
             headerShown: false,
           })} />
+
+<Stack.Screen name="editcandid" component={EditCandidate}     options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
           <Stack.Screen name="report" component={Report}     options={() => ({
             tabBarStyle: {
               display: "none",
@@ -133,12 +155,86 @@ export default function App() {
             tabBarButton: () => null,
             headerShown: false,
           })} />
+                <Stack.Screen name="postjob" component={PostJob}     options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+
+<Stack.Screen name="posttype" component={PostType}     options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+          <Stack.Screen name="com" component={Comission}     options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+               <Stack.Screen name="reporte" component={ReportEmployer}     options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+                      <Stack.Screen name="notir" component={NotificationRing}     options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+                          <Stack.Screen name="bnav" component={BottomNav}     options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+                               <Stack.Screen name="match" component={Match}     options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+          <Stack.Screen name="matchsecond" component={MatchingSecond}     options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+                  <Stack.Screen name="seecand" component={SeeCandidate}     options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
     </Stack.Navigator>
   </NavigationContainer>
   </ApplicationProvider>
+
   );
 }
-
+AppRegistry.registerComponent(appName, () => App);
 // const styles = StyleSheet.create({
 //   container: {
 //     flex: 1,

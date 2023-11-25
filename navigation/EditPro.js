@@ -33,7 +33,7 @@ export default function EditPro({navigation}){
         placeholder="Employment Type"
         
         onSelect={index => setSelectedIndex(index)}
-        style={{width:315,marginTop:50,alignSelf:'center',backgroundColor:'white'}}
+        style={{width:315,marginTop:30,alignSelf:'center',backgroundColor:'white'}}
       >
         <SelectItem title='Full Time' />
         <SelectItem title='Part Time' />
@@ -47,7 +47,7 @@ export default function EditPro({navigation}){
                 width:314,
                 height:40,
             alignSelf:'center',
-                marginTop:30,
+                marginTop:20,
                 backgroundColor: "white",
                 borderWidth:0,
                 marginRight:5,

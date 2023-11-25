@@ -87,20 +87,27 @@ export default function AddCandidate({navigation}){
              marginBottom:10
             }}
           />
-         <Text style={{flex:1,textAlignVertical:'center',marginLeft:30,marginTop:10,fontSize:14,color:'grey',marginBottom:5}}>Education</Text>
+         {/* <Text style={{flex:1,textAlignVertical:'center',marginLeft:30,marginTop:10,fontSize:14,marginBottom:5,color:'grey'}}>Education</Text> */}
                                    <TouchableOpacity
             style={{
                 width:328,
               height:45,
+              marginTop:10,
               backgroundColor: "white",
               elevation: 5,
              alignSelf:'center',
              marginBottom:10,
              flexDirection:"row",
+             borderWidth:1,
+             borderRadius:5,
+             borderColor:"white",
+             borderWidth:1,
+             borderRadius:5,
+             borderColor:"white"
            
             }}
           >
-<Text style={{flex:1,textAlignVertical:'center',marginLeft:20,fontSize:16,color:'#CBCBCB'}}>Add Education</Text>
+<Text style={{flex:1,textAlignVertical:'center',marginLeft:18,fontSize:14,color:'#8f9bb1'}}>Add Education</Text>
 <TouchableOpacity style={{width:68,height:23,elevation:5,backgroundColor:'#CDDFF7',marginRight:10,marginTop:10}}>
     <Text style={{flex:1,textAlignVertical:'center',alignSelf:"center",fontSize:12}}>Upload</Text>
 </TouchableOpacity>
@@ -136,22 +143,26 @@ export default function AddCandidate({navigation}){
         <SelectItem title='Passport' />
        
       </Select>
-      <Text style={{flex:1,textAlignVertical:'center',marginLeft:30,marginTop:10,fontSize:14,color:'grey'}}>ID</Text>
+      {/* <Text style={{flex:1,textAlignVertical:'center',marginLeft:30,marginTop:10,fontSize:14,color:'grey'}}>ID</Text> */}
       <View
             style={{
                 width:328,
-              height:45,
+              height:40,
               backgroundColor: "white",
               elevation: 5,
              alignSelf:'center',
              marginBottom:10,
              flexDirection:"row",
-             marginTop:5
+             marginTop:5,
+             borderWidth:1,
+             borderRadius:5,
+             borderColor:"white",
+             marginTop:10
            
             }}
           >
-<Text style={{flex:1,textAlignVertical:'center',marginLeft:20,fontSize:16,color:'#CBCBCB'}}>Upload your ID</Text>
-<TouchableOpacity style={{width:68,height:23,elevation:5,backgroundColor:'#CDDFF7',marginRight:10,marginTop:10}}>
+<Text style={{flex:1,textAlignVertical:'center',marginLeft:18,fontSize:14,color:'#8f9bb1'}}>Upload your ID</Text>
+<TouchableOpacity style={{width:68,height:23,elevation:2,backgroundColor:'#CDDFF7',marginRight:10,marginTop:8}}>
     <Text style={{flex:1,textAlignVertical:'center',alignSelf:"center",fontSize:12}}>Upload</Text>
 </TouchableOpacity>
           </View>
@@ -167,22 +178,25 @@ export default function AddCandidate({navigation}){
              marginBottom:10
             }}
           />
-            <Text style={{flex:1,textAlignVertical:'center',marginLeft:30,marginTop:10,fontSize:14,color:'grey'}}>CV/Resume</Text>
+            {/* <Text style={{flex:1,textAlignVertical:'center',marginLeft:30,marginTop:10,fontSize:14,color:'grey'}}>CV/Resume</Text> */}
       <View
             style={{
                 width:328,
-              height:45,
+              height:40,
               backgroundColor: "white",
               elevation: 5,
              alignSelf:'center',
              marginBottom:10,
              flexDirection:"row",
-             marginTop:5
+             marginTop:10,
+             borderWidth:1,
+             borderRadius:5,
+             borderColor:"white"
            
             }}
           >
-<Text style={{flex:1,textAlignVertical:'center',marginLeft:20,fontSize:16,color:'#CBCBCB'}}>Upload CV</Text>
-<TouchableOpacity style={{width:68,height:23,elevation:5,backgroundColor:'#CDDFF7',marginRight:10,marginTop:10}}>
+<Text style={{flex:1,textAlignVertical:'center',marginLeft:18,fontSize:14,color:'#8f9bb1'}}>Upload CV</Text>
+<TouchableOpacity style={{width:68,height:23,elevation:2,backgroundColor:'#CDDFF7',marginRight:10,marginTop:7}}>
     <Text style={{flex:1,textAlignVertical:'center',alignSelf:"center",fontSize:12}}>Upload</Text>
 </TouchableOpacity>
           </View>

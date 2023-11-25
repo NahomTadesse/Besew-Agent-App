@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { View , Button ,Image ,ScrollView,TextInput,Dimensions,TouchableOpacity,Text,TouchableWithoutFeedback } from "react-native";
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height
+import BottomNav from "./BottomNav";
 import { IndexPath, Layout, Select, SelectItem ,Input} from '@ui-kitten/components';
+import { Pressable } from "react-native";
 export default function HomeScreen({navigation}){
     const [selectedIndex, setSelectedIndex] = useState(0)
     const next=()=>{
@@ -47,23 +49,27 @@ navigation.navigate('dashboard')
                 </TouchableOpacity>
 
 
-                <View style={{flexDirection:"row",marginTop:50,marginLeft:20,width:screenWidth/2,justifyContent:'flex-end',right:-20}}>
+                <View style={{flexDirection:"row",marginTop:55,marginLeft:20,width:screenWidth/2,justifyContent:'flex-end',right:-20}}>
     
                 <Select
+                // appearance={{c}}
+               placeholder='AMH'
         selectedIndex={selectedIndex}
         onSelect={index => setSelectedIndex(index)}
-        style={{width:100,backgroundColor:'white'}}
+        style={{width:120,backgroundColor:'white'}}
       >
         <SelectItem title='Amharic' />
         <SelectItem title='English' />
        
       </Select>
+      <TouchableOpacity onPress={()=>{navigation.navigate('notir')}}>
                 <Image
                   style={
-                    { width: 24, height: 24,marginTop:10}
+                    { width: 24, height: 24,marginTop:10,marginLeft:5}
                   }
                   source={require("../assets/ring.png")}
                 />
+                </TouchableOpacity>
                 </View>
 
     </View>
@@ -200,7 +206,9 @@ navigation.navigate('dashboard')
         return(
             <View style={{marginTop:24}}>
 <Text style={{fontSize:18 ,marginLeft:30,color:'#273469',fontWeight:'700',marginBottom:20}}>Candidates</Text>
-<View style={{width:340,height:69,backgroundColor:'#E9F1FB',alignSelf:'center',borderWidth:1,borderRadius:10,borderColor:'#F4F0FF'}}>
+<TouchableOpacity  
+onPress={()=>{navigation.navigate('editcandid')}}
+style={{width:340,height:69,backgroundColor:'#E9F1FB',alignSelf:'center',borderWidth:1,borderRadius:10,borderColor:'#F4F0FF'}}>
 
 <View style={{flex:1,flexDirection:'row',marginTop:10,marginLeft:10,maxHeight:30}}>
            <Text style={{fontSize:14,color:'#273469',fontWeight:'500'}}>Abebe abebe</Text>
@@ -220,10 +228,14 @@ navigation.navigate('dashboard')
            </View>
 
           
-</View>
+</TouchableOpacity>
 {/* second card */}
 
-<View style={{width:340,height:69,marginTop:20,backgroundColor:'#E9F1FB',alignSelf:'center',borderWidth:1,borderRadius:10,borderColor:'#F4F0FF'}}>
+<TouchableOpacity
+onPress={()=>{navigation.navigate('editcandid')}}
+style={{width:340,height:69,marginTop:20,
+marginBottom:20
+,backgroundColor:'#E9F1FB',alignSelf:'center',borderWidth:1,borderRadius:10,borderColor:'#F4F0FF'}}>
 
 <View style={{flex:1,flexDirection:'row',marginTop:10,marginLeft:10,maxHeight:30}}>
            <Text style={{fontSize:14,color:'#273469',fontWeight:'500'}}>Abebe abebe</Text>
@@ -243,20 +255,27 @@ navigation.navigate('dashboard')
            </View>
 
           
-</View>
+</TouchableOpacity>
         
             </View>
             
         )
     }
     return(
-        <ScrollView style={{backgroundColor:'white'}} contentContainerStyle={{ flexGrow: 1 }} >
+        <ScrollView style={{backgroundColor:'white'}} contentContainerStyle={{ flexGrow: 1 }} StickyHeaderComponent={[4]}>
             {mainCont()}
             {card()}
             {jobPost()}
             {candidates()}
-            <TouchableOpacity onPress ={()=>{navigation.navigate('addcandid')}}
+            <BottomNav navigation={navigation}/>
+            {/* <TouchableOpacity onPress ={()=>{navigation.navigate('addcandid')}}
              style={{width:100,height:40,backgroundColor:'#3680E1',alignSelf:'center',marginTop:30}}></TouchableOpacity>
+
+<TouchableOpacity onPress ={()=>{navigation.navigate('postjob')}}
+             style={{width:100,height:40,backgroundColor:'red',alignSelf:'center',marginTop:30}}></TouchableOpacity>
+
+             <TouchableOpacity onPress ={()=>{navigation.navigate('com')}}
+             style={{width:100,height:40,backgroundColor:'yellow',alignSelf:'center',marginTop:30}}></TouchableOpacity> */}
         </ScrollView>
     )
 }

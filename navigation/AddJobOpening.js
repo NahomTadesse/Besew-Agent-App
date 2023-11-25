@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { View , Button ,Image ,ScrollView,TextInput,Dimensions,TouchableOpacity,Text,TouchableWithoutFeedback } from "react-native";
+import { View , Button ,Image ,ScrollView,TextInput,Dimensions,TouchableOpacity,Text,
+  
+  Modal,Pressable,TouchableWithoutFeedback } from "react-native";
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height
 import { IndexPath, Layout, Select, SelectItem ,Input,Radio, RadioGroup,Toggle} from '@ui-kitten/components';
@@ -9,6 +11,48 @@ export default function AddJobOpening({navigaion}){
     const [checked, setChecked] = React.useState(false);
 const[isFirst,setFirst] = useState(true)
 const[isSecond,setSecond] = useState(false)
+const [showpop ,setShowPop] =useState(false)
+
+const popUp = () => {
+   
+    return (
+      <View>
+        <Modal
+          transparent={true}
+          onRequestClose={() => {
+           setShowPop(false)
+          }}
+        >
+          <Pressable
+          onPress={(event) => event.target == event.currentTarget && setShowPop(false)}
+            style={{
+              flex: 1,
+              justifyContent: "center",
+              backgroundColor: "white",
+              opacity: 0.9,
+            }}
+          >
+            <View style={{width:271,height:238,backgroundColor:'white',alignSelf:'center',elevation:2}}>
+<Text style={{alignSelf:"center",marginTop:60,fontWeight:'400',fontSize:14}}>
+Do you want to post this job?
+</Text>
+
+<View style={{flexDirection:"row",alignSelf:'center',marginTop:40}}>
+<TouchableOpacity style={{width:100,height:32,backgroundColor:'#D1462F'}}>
+    <Text style={{flex:1,textAlignVertical:"center",alignSelf:"center",color:"white"}}>NO</Text>
+</TouchableOpacity>
+<TouchableOpacity style={{width:100,height:32,backgroundColor:'#00B050',marginLeft:20}}>
+    <Text style={{flex:1,textAlignVertical:"center",alignSelf:"center",color:"white"}}>YES</Text>
+</TouchableOpacity>
+</View>
+            </View>
+
+        
+          </Pressable>
+        </Modal>
+      </View>
+    );
+  };
 
 const firstBtn = ()=>{
 setFirst(false)
@@ -17,6 +61,7 @@ setSecond(true)
 const SecondBtn = ()=>{
     
 }
+
     const mainCont =()=>{
 
         return(
@@ -211,11 +256,16 @@ NO
             }}
           />
           <View style={{flexDirection:"row",alignSelf:'center'}}>
-          <TouchableOpacity  style={{height:48,width:144,backgroundColor:'white',marginTop:40,
+          <TouchableOpacity 
+          
+          onPress={()=>{setFirst(true);setSecond(false)}}
+          style={{height:48,width:144,backgroundColor:'white',marginTop:40,
 borderWidth:1,borderRadius:10,borderColor:'#3680E1',marginRight:10,alignSelf:'center',marginBottom:20}}><Text 
 style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'#3680E1'}}>Add another job</Text></TouchableOpacity>
 
-<TouchableOpacity style={{height:48,width:144,backgroundColor:'#3680E1',marginTop:40,
+<TouchableOpacity
+onPress={()=>{setShowPop(true)}}
+style={{height:48,width:144,backgroundColor:'#3680E1',marginTop:40,
 borderWidth:1,borderRadius:10,borderColor:'#3EC6FF',marginRight:10,alignSelf:'center',marginBottom:20}}><Text 
 style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'white'}}>Done</Text></TouchableOpacity>
           </View>
@@ -236,6 +286,7 @@ style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'white'}}>Don
           <Text style={{color:"#273469",fontSize:20,fontWeight:'500',marginLeft:10}}>{isFirst ? 'Add Employer' : 'Add New Job'}</Text>
           
             </View>
+            {showpop && popUp()}
             {isFirst ? mainCont():addJob()}
            
         </ScrollView>
