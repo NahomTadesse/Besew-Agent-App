@@ -1,12 +1,13 @@
 import React from "react";
 import { View , Button , ScrollView,Text ,Image,Pressable,TouchableOpacity,Dimensions} from "react-native";
 import {img} from '../assets/profile10.png'
+import Constants from 'expo-constants';
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height
 export default function LaunchScreen({navigation}){
 
     const logIn =()=>{
-        navigation.navigate('login')
+        // navigation.navigate('login')
     }
     const signUp =()=>{
         navigation.navigate('signup')
@@ -14,26 +15,46 @@ export default function LaunchScreen({navigation}){
     const middleCont =()=>{
         return(
             <View style={{marginTop:100,backgroundColor:'white'}}>
-  <Image
-                  style={
-                    { width: 100, height: 100,flex:1,alignSelf:'center',marginTop:screenHeight/6}
-                  }
-                  source={require("../assets/profile10.png")}
-                />
 
+<Text style={{alignSelf:"center",fontSize:70,color:"#3680E1",bottom:250}}>BESEW</Text>
+
+<Text style={{alignSelf:"center",fontSize:16,color:"#3680E1",marginTop:20,fontWeight:"bold",bottom:250}}>Welcome to BESEW</Text>
+<Text style={{alignSelf:"center",fontSize:16,color:"#30343F",marginTop:20,bottom:250}}>Simplify your job placement and manage{'\n'}{'                        '}your candidates. </Text>
+<Text style={{alignSelf:"center",fontSize:16,color:"#30343F",marginTop:20,bottom:250,marginLeft:10}}>Get started now!
+</Text>
             </View>
         )
     }
+    const design=()=>{
+     return(
+        <View>
+            <Image
+source={require("../assets/right.png")}
+style={{flex:1,alignSelf:"flex-end"}}
+/>
+<Image
+source={require("../assets/left.png")}
+style={{bottom:100,right:25}}
+/>
+
+        </View>
+     )
+    }
 
     return(
-        <ScrollView contentContainerStyle={{ flexGrow: 1 }} style={{backgroundColor:'white'}}> 
+        <ScrollView contentContainerStyle={{ flexGrow: 1 }} style={{backgroundColor:'white', marginTop:Constants.statusBarHeight}}> 
+        {design()}
            {middleCont()}
-           <View style={{flexDirection:'row',position:'absolute',bottom:0,alignSelf:'center',marginBottom:100}}>
-<TouchableOpacity onPress={logIn} style={{height:40,width:120,backgroundColor:'#DDDDDD',
-borderWidth:1,borderRadius:10,borderColor:'#DDDDDD',marginRight:10}}><Text style={{flex:1,textAlignVertical:'center',alignSelf:"center"}}>Log In</Text></TouchableOpacity>
+           <View style={{position:'absolute',bottom:0,alignSelf:'center',marginBottom:130}}>
 
-<TouchableOpacity onPress={signUp} style={{height:40,width:120,backgroundColor:'#3680E1',borderWidth:1,
-borderRadius:10,borderColor:'#3EC6FF'}}><Text style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'white'}}>Sign Up</Text></TouchableOpacity>
+
+           <TouchableOpacity onPress={logIn} style={{height:48,width:302,backgroundColor:'#3680E1',marginBottom:10,marginTop:10,
+borderWidth:1,borderRadius:10,borderColor:'#DDDDDD',marginRight:10}}><Text style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'white'}}>Sign In</Text></TouchableOpacity>
+           <TouchableOpacity onPress={signUp} style={{height:48,width:302,backgroundColor:'white',borderWidth:1,
+borderRadius:10,borderColor:'#3EC6FF'}}><Text style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'#3680E1'}}>Create An Account</Text></TouchableOpacity>
+
+
+
 </View>
         </ScrollView>
     )

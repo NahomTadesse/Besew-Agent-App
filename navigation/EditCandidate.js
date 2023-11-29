@@ -56,7 +56,7 @@ export default function EditCandidate({navigation}){
             
             <Input
             size="small"
-            placeholder="lorem ipsum"
+            placeholder="Abebe Kebede"
             label='Candidate Name'
             style={{
                 width:304,
@@ -74,7 +74,7 @@ export default function EditCandidate({navigation}){
    
 
       <Input
-      placeholder="lorem ipsum"
+      placeholder="0955655546"
             label='Candidate  Phone Number'
             size="small"
             style={{
@@ -93,7 +93,7 @@ export default function EditCandidate({navigation}){
             }}
    />
          <Input
-         placeholder="lorem ipsum"
+         placeholder="Contract"
             label='Candidate job type number'
             size="small"
             style={{
@@ -125,7 +125,7 @@ export default function EditCandidate({navigation}){
 
 
 <Input
-placeholder="lorem ipsum"
+placeholder="2+ years"
             label='Experience'
             size="small"
             style={{
@@ -201,7 +201,7 @@ placeholder="lorem ipsum"
             }}
    />
          <Input
-         placeholder="lorem ipsum"
+         placeholder="Nov 30,2023"
             label='Deadline'
             size="small"
             style={{
@@ -220,7 +220,7 @@ placeholder="lorem ipsum"
             }}
    />
             <Input
-            placeholder="lorem ipsum"
+            placeholder="2000-5000"
             label='Salary range'
             size="small"
             style={{
@@ -262,6 +262,12 @@ placeholder="lorem ipsum"
             style={{height:48,width:250,backgroundColor:'#D1462F',marginTop:40,
 borderWidth:1,borderRadius:10,borderColor:'#D1462F',marginRight:10,alignSelf:'center',marginBottom:20}}><Text 
 style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'white'}}>Delete Candidate</Text></TouchableOpacity>
+
+<TouchableOpacity
+            onPress={()=>{navigation.navigate('feedback')}}
+            style={{height:48,width:250,backgroundColor:'#3680E1',marginTop:5,
+borderWidth:1,borderRadius:10,borderColor:'#3680E1',marginRight:10,alignSelf:'center',marginBottom:20}}><Text 
+style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'white'}}>FeedBack</Text></TouchableOpacity>
 
         </ScrollView>
     )

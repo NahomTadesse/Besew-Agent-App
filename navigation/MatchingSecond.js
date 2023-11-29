@@ -119,7 +119,7 @@ const mainCont = ()=>{
 
 <View style={{flexDirection:'row',marginTop:20,marginLeft:20}}>
     <Text>12 candidates applied</Text>
-    <TouchableOpacity onPress={()=>{navigation.navigate('seecand')}} style={{width:141,height:30,marginLeft:60,backgroundColor:'#3680E1',borderWidth:1,borderRadius:10,borderColor:"#3680E1"}}>
+    <TouchableOpacity onPress={()=>{navigation.navigate('seecand')}} style={{width:141,height:30,marginLeft:60,bottom:7,backgroundColor:'#3680E1',borderWidth:1,borderRadius:10,borderColor:"#3680E1"}}>
         <Text style={{color:'white',flex:1,textAlignVertical:"center",alignSelf:'center'}}>See candidates</Text>
     </TouchableOpacity>
 </View>

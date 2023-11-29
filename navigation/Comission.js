@@ -64,7 +64,7 @@ const card=()=>{
         </View>
         <TouchableOpacity
         onPress={()=>{setIsSelected(true)}}
-        style={{width:360,height:120,borderTopWidth:1,borderBottomWidth:1,borderColor:'#868686',
+        style={{width:360,height:120,borderBottomWidth:1,borderColor:'#868686',
          alignSelf:"center",marginTop:10,marginBottom:20}}>
 <View style={{flexDirection:"row",height:45,marginTop:5,marginLeft:5}}>
     <View style={{width:screenWidth/2}}>
@@ -98,8 +98,8 @@ const card=()=>{
 
 <TouchableOpacity
   onPress={()=>{setIsSelected(true)}}
-style={{width:360,height:120,borderTopWidth:1,borderBottomWidth:1,borderColor:'#868686',
-         alignSelf:"center",marginTop:10}}>
+style={{width:360,height:120,borderBottomWidth:1,borderColor:'#868686',
+         alignSelf:"center"}}>
 <View style={{flexDirection:"row",height:45,marginTop:5,marginLeft:5}}>
     <View style={{width:screenWidth/2}}>
     <Text style={{color:'#868686',fontSize:14}}>Job Title</Text>

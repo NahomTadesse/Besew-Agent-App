@@ -27,19 +27,32 @@ import PostType from './navigation/PostType'
 import Comission from './navigation/Comission';
 import ReportEmployer from './navigation/ReportEmployer';
 import NotificationRing from './navigation/NotificationRing';
+import CandidatesList from './navigation/CandidatesList';
 import BottomNav from './navigation/BottomNav';
 import Match from './navigation/Match';
 import MatchingSecond from './navigation/MatchingSecond';
 import SeeCandidate from './navigation/SeeCandidates';
+import FeedBack from './navigation/FeedBack';
+import Filter from './navigation/Filter'
+import MatchInterview from './navigation/MatchInterview';
+import JobDetails from './navigation/JobDetails';
+import Jobs from './navigation/Jobs';
 import { NativeBaseProvider, Box } from "native-base";
 import { PaperProvider } from 'react-native-paper';
 import { name as appName } from './app.json';
+import { StatusBar } from 'expo-status-bar';
+import Constants from 'expo-constants';
+
+
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
+    // <View style={{ marginTop:Constants.statusBarHeight}}>
     <ApplicationProvider {...eva} theme={eva.light}> 
-    <NavigationContainer>
-    <Stack.Navigator>
+   
+    <NavigationContainer >
+    <StatusBar style="auto" />
+    <Stack.Navigator  >
       <Stack.Screen name="launch" component={LaunchScreen}
            options={() => ({
             tabBarStyle: {
@@ -228,8 +241,62 @@ export default function App() {
             tabBarButton: () => null,
             headerShown: false,
           })} />
+
+<Stack.Screen name="feedback" component={FeedBack}     options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+
+<Stack.Screen name="job" component={Jobs}     options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+
+<Stack.Screen name="filter" component={Filter} options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+
+<Stack.Screen name="canlist" component={CandidatesList} options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+
+<Stack.Screen name="matchint" component={MatchInterview} options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+          <Stack.Screen name="jobdetail" component={JobDetails} options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
     </Stack.Navigator>
   </NavigationContainer>
+
   </ApplicationProvider>
 
   );

@@ -169,7 +169,7 @@ style={{marginLeft:55,marginBottom:20}}
              marginBottom:10
             }}
           />
-                               <Input
+                               {/* <Input
             label="Gender"
             style={{
                 width:328,
@@ -180,7 +180,18 @@ style={{marginLeft:55,marginBottom:20}}
              marginBottom:10,
             
             }}
-          />
+          /> */}
+            <Select
+        selectedIndex={selectedIndex}
+        placeholder="Gender"
+        
+        onSelect={index => setSelectedIndex(index)}
+        style={{width:328,alignSelf:'center',backgroundColor:'white',marginTop:20}}
+      >
+        <SelectItem title='Male' />
+        <SelectItem title='Female' />
+       
+      </Select>
 
           {/* here */}
           <Text style={{marginLeft:30,marginTop:10,color:'#30343F',fontSize:14}}>Required point of contact</Text>

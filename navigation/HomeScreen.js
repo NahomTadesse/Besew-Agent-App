@@ -23,7 +23,7 @@ navigation.navigate('dashboard')
         </TouchableWithoutFeedback>
       )
       const renderIconRight = (props)=> (
-        <TouchableWithoutFeedback >
+        <TouchableOpacity onPress={()=>{navigation.navigate('filter')}}>
         <Image
                   style={
                     { width: 16, height: 16}
@@ -31,7 +31,7 @@ navigation.navigate('dashboard')
                   source={require("../assets/filter.png")}
                   
                 />
-        </TouchableWithoutFeedback>
+        </TouchableOpacity>
       )
 
     const mainCont=()=>{
