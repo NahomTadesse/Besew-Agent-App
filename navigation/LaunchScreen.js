@@ -11,7 +11,7 @@ export default function LaunchScreen({navigation}){
         // navigation.navigate('login')
     }
     const signUp =()=>{
-        navigation.navigate('signup')
+        navigation.navigate('terms')
     }
     const middleCont =()=>{
         return(

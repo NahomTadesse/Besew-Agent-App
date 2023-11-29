@@ -15,6 +15,7 @@ import AgentSearch from './navigation/AgentSearch';
 import Post from './navigation/Post';
 import Boarding from './navigation/Boarding';
 import AgentBoarding from './navigation/AgentBoarding';
+import TermsAndConditions from './navigation/TermsAndConditions';
 import EditPro from './navigation/EditPro';
 import EditPersonal from './navigation/EditPersonal'
 import Notification from './navigation/Notification';
@@ -36,6 +37,7 @@ import SeeCandidate from './navigation/SeeCandidates';
 import FeedBack from './navigation/FeedBack';
 import Filter from './navigation/Filter'
 import MatchInterview from './navigation/MatchInterview';
+import AddDefaultJob from './navigation/AddDefaultJob';
 import JobDetails from './navigation/JobDetails';
 import Jobs from './navigation/Jobs';
 import { NativeBaseProvider, Box } from "native-base";
@@ -62,6 +64,7 @@ export default function App() {
             tabBarButton: () => null,
             headerShown: false,
           })} />
+
       <Stack.Screen name="launch" component={LaunchScreen}
            options={() => ({
             tabBarStyle: {
@@ -296,6 +299,23 @@ export default function App() {
             headerShown: false,
           })} />
           <Stack.Screen name="jobdetail" component={JobDetails} options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+
+<Stack.Screen name="terms" component={TermsAndConditions} options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+          <Stack.Screen name="adddefault" component={AddDefaultJob} options={() => ({
             tabBarStyle: {
               display: "none",
             },

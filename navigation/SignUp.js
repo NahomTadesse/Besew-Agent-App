@@ -1,5 +1,5 @@
 import{ React,useState }from "react";
-import { View ,Image ,ScrollView,TextInput,Dimensions,TouchableOpacity,Text } from "react-native";
+import { View ,Image ,ScrollView,TextInput,Dimensions,ImageBackground,TouchableOpacity,Text } from "react-native";
 import {
     Icon,
     IconElement,
@@ -166,15 +166,24 @@ style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'white'}}>Nex
 
 const Verification =()=>{
     return(
-      
-        <View style={{marginTop:20}}> 
-        <Text style={{color:"#3680E1",fontSize:22,marginLeft:35,fontWeight:'700',marginTop:40}}>Verification phone number</Text>
-        <Text style={{color:"#3680E1",fontSize:14,marginLeft:35,marginTop:10,marginBottom:20}}>
-        You will receive SMS code on your phone number</Text>
+      <ImageBackground  style={{height:screenHeight ,width:screenWidth ,alignSelf:"center"}}
+            
+      source={require("../assets/lang.png") }
+      >
+        <Text style={{alignSelf:"center",fontSize:70,color:"white",marginTop:260}}>BESEW</Text>
+
+
+        <View style={{marginTop:60}}> 
+        <Text style={{fontSize:20,fontWeight:'700',marginTop:60,alignSelf:'center',color:'#3680E1'}}>Verification phone number</Text>
+        <Text style={{color:"#30343F",fontSize:14,marginTop:10,alignSelf:"center"}}>
+        Enter your phone number and you will </Text>
+        <Text style={{color:"#30343F",fontSize:14,alignSelf:"center"}}>
+        receive SMS code on your phone number</Text>
+  
 <Input
                 value={phoneNumber}
                 placeholder="name"
-                label = 'Enter agency name'
+                label = 'Enter phone number'
                 // onChangeText={(nextValue) => setFullName(nextValue)}
                 style={{
                     width:304,
@@ -186,7 +195,7 @@ const Verification =()=>{
                  
                 
                   
-                  marginTop:45
+                  marginTop:20
                 }}
               />
               <View style={{width:304,height:1,backgroundColor:'black',alignSelf:'center'}}></View>
@@ -196,14 +205,19 @@ const Verification =()=>{
 borderWidth:1,borderRadius:10,borderColor:'#3EC6FF',marginRight:10,alignSelf:'center',marginBottom:20}}><Text 
 style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'white'}}>Send Code</Text></TouchableOpacity>
         </View>
+        </ImageBackground>
     )  
   
 }
 const Otp =()=>{
     return(
-      
+      <ImageBackground  style={{height:screenHeight ,width:screenWidth ,alignSelf:"center"}}
+            
+            source={require("../assets/lang.png") }
+            >
+              <Text style={{alignSelf:"center",fontSize:70,color:"white",marginTop:260}}>BESEW</Text>
         <View style={{marginTop:60}}> 
-        <Text style={{fontSize:25,fontWeight:'700',marginTop:40,alignSelf:'center'}}>OTP</Text>
+        <Text style={{fontSize:20,fontWeight:'700',marginTop:60,alignSelf:'center',color:'#3680E1'}}>Verification Code</Text>
         <Text style={{fontSize:14,marginTop:10,marginBottom:20,alignSelf:'center'}}>
        Enter the code here</Text>
         <View style={{flexDirection:'row',alignSelf:"center"}}>
@@ -258,13 +272,14 @@ const Otp =()=>{
        
  </View>
  <TouchableOpacity>
- <Text style={{fontSize:14,marginBottom:20,alignSelf:'center',top:-20}}>
-       Change number?</Text>
+ <Text style={{fontSize:14,marginLeft:60,color:"#30343F"}}>
+       Resend Code</Text>
        </TouchableOpacity>
 <TouchableOpacity onPress={signUp} style={{height:48,width:250,backgroundColor:'#3680E1',marginTop:40,
 borderWidth:1,borderRadius:10,borderColor:'#3EC6FF',marginRight:10,alignSelf:'center',marginBottom:20}}><Text 
-style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'white'}}>Submit</Text></TouchableOpacity>
+style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'white'}}>Next</Text></TouchableOpacity>
         </View>
+        </ImageBackground>
     )  
   
 }

@@ -39,6 +39,17 @@ const MainCont =()=>{
                   source={require("../assets/ari.png")}
                 />
 </TouchableOpacity>
+<TouchableOpacity 
+onPress={()=>{navigation.navigate('adddefault')}}
+style={{width:312,height:32,borderBottomWidth:1,flexDirection:'row',marginTop:30}}>
+<Text style={{fontSize:14}}>Add Default Jobs</Text>
+<Image
+                  style={
+                    { width: 7, height: 10,marginLeft:170,marginTop:5,}
+                  }
+                  source={require("../assets/ari.png")}
+                />
+</TouchableOpacity>
 
 <TouchableOpacity  onPress={()=>{navigation.navigate('not')}} style={{width:312,height:32,borderBottomWidth:1,flexDirection:'row',marginTop:30}}>
 <Text style={{fontSize:14}}>Notifications</Text>

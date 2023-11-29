@@ -35,6 +35,13 @@ export default function AddCandidate({navigation}){
 
     const [checked, setChecked] = React.useState(false);
     const [selectedIndex, setSelectedIndex] = useState(0)
+
+    const candidates=()=>{
+return(
+  <View></View>
+)
+
+    }
     const candidInof=()=>{
         return(
             <View>
