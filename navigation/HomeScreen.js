@@ -5,6 +5,7 @@ const screenHeight = Dimensions.get('window').height
 import BottomNav from "./BottomNav";
 import { IndexPath, Layout, Select, SelectItem ,Input} from '@ui-kitten/components';
 import { Pressable } from "react-native";
+import Constants from 'expo-constants';
 export default function HomeScreen({navigation}){
     const [selectedIndex, setSelectedIndex] = useState(0)
     const next=()=>{
@@ -51,7 +52,7 @@ navigation.navigate('dashboard')
 
                 <View style={{flexDirection:"row",marginTop:55,marginLeft:20,width:screenWidth/2,justifyContent:'flex-end',right:-20}}>
     
-                <Select
+                {/* <Select
                 // appearance={{c}}
                placeholder='AMH'
         selectedIndex={selectedIndex}
@@ -61,7 +62,7 @@ navigation.navigate('dashboard')
         <SelectItem title='Amharic' />
         <SelectItem title='English' />
        
-      </Select>
+      </Select> */}
       <TouchableOpacity onPress={()=>{navigation.navigate('notir')}}>
                 <Image
                   style={
@@ -262,12 +263,14 @@ marginBottom:20
         )
     }
     return(
-        <ScrollView style={{backgroundColor:'white'}} contentContainerStyle={{ flexGrow: 1 }} StickyHeaderComponent={[4]}>
+        <ScrollView style={{backgroundColor:'white',height:screenHeight-Constants.statusBarHeight}} contentContainerStyle={{ flexGrow: 1 }}>
             {mainCont()}
             {card()}
             {jobPost()}
             {candidates()}
+        
             <BottomNav navigation={navigation}/>
+      
             {/* <TouchableOpacity onPress ={()=>{navigation.navigate('addcandid')}}
              style={{width:100,height:40,backgroundColor:'#3680E1',alignSelf:'center',marginTop:30}}></TouchableOpacity>
 

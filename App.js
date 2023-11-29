@@ -22,6 +22,7 @@ import Report from './navigation/Report';
 import AddJobOpening from './navigation/AddJobOpening'
 import AddCandidate from './navigation/AddCandidate'
 import EditCandidate from './navigation/EditCandidate'
+import Language from './navigation/Language';
 import PostJob from './navigation/PostJob';
 import PostType from './navigation/PostType' 
 import Comission from './navigation/Comission';
@@ -53,6 +54,14 @@ export default function App() {
     <NavigationContainer >
     <StatusBar style="auto" />
     <Stack.Navigator  >
+    <Stack.Screen name="lang" component={Language} options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
       <Stack.Screen name="launch" component={LaunchScreen}
            options={() => ({
             tabBarStyle: {
@@ -294,6 +303,7 @@ export default function App() {
             tabBarButton: () => null,
             headerShown: false,
           })} />
+              
     </Stack.Navigator>
   </NavigationContainer>
 

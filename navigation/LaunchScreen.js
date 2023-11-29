@@ -1,7 +1,8 @@
 import React from "react";
-import { View , Button , ScrollView,Text ,Image,Pressable,TouchableOpacity,Dimensions} from "react-native";
+import { View , Button , ScrollView,Text ,ImageBackground,Image,Pressable,TouchableOpacity,Dimensions} from "react-native";
 import {img} from '../assets/profile10.png'
 import Constants from 'expo-constants';
+
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height
 export default function LaunchScreen({navigation}){
@@ -14,13 +15,13 @@ export default function LaunchScreen({navigation}){
     }
     const middleCont =()=>{
         return(
-            <View style={{marginTop:100,backgroundColor:'white'}}>
+            <View style={{marginTop:300,alignSelf:"center",marginLeft:20}}>
 
-<Text style={{alignSelf:"center",fontSize:70,color:"#3680E1",bottom:250}}>BESEW</Text>
+<Text style={{alignSelf:"center",fontSize:70,color:"#3680E1"}}>BESEW</Text>
 
-<Text style={{alignSelf:"center",fontSize:16,color:"#3680E1",marginTop:20,fontWeight:"bold",bottom:250}}>Welcome to BESEW</Text>
-<Text style={{alignSelf:"center",fontSize:16,color:"#30343F",marginTop:20,bottom:250}}>Simplify your job placement and manage{'\n'}{'                        '}your candidates. </Text>
-<Text style={{alignSelf:"center",fontSize:16,color:"#30343F",marginTop:20,bottom:250,marginLeft:10}}>Get started now!
+<Text style={{alignSelf:"center",fontSize:16,color:"#3680E1",marginTop:20,fontWeight:"bold"}}>Welcome to BESEW</Text>
+<Text style={{alignSelf:"center",fontSize:16,color:"#30343F",marginTop:20}}>Simplify your job placement and manage{'\n'}{'                        '}your candidates. </Text>
+<Text style={{alignSelf:"center",fontSize:16,color:"#30343F",marginTop:20,marginLeft:10}}>Get started now!
 </Text>
             </View>
         )
@@ -43,7 +44,11 @@ style={{bottom:100,right:25}}
 
     return(
         <ScrollView contentContainerStyle={{ flexGrow: 1 }} style={{backgroundColor:'white', marginTop:Constants.statusBarHeight}}> 
-        {design()}
+
+<ImageBackground style={{height:screenHeight+25,width:screenWidth}}
+             source={require("../assets/launch.png") }
+            >
+        {/* {design()} */}
            {middleCont()}
            <View style={{position:'absolute',bottom:0,alignSelf:'center',marginBottom:130}}>
 
@@ -56,6 +61,7 @@ borderRadius:10,borderColor:'#3EC6FF'}}><Text style={{flex:1,textAlignVertical:'
 
 
 </View>
+</ImageBackground>
         </ScrollView>
     )
 }
