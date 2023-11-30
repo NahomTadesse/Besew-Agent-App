@@ -16,6 +16,7 @@ import Post from './navigation/Post';
 import Boarding from './navigation/Boarding';
 import AgentBoarding from './navigation/AgentBoarding';
 import TermsAndConditions from './navigation/TermsAndConditions';
+import Interview from './navigation/Interview';
 import EditPro from './navigation/EditPro';
 import EditPersonal from './navigation/EditPersonal'
 import Notification from './navigation/Notification';
@@ -56,6 +57,17 @@ export default function App() {
     <NavigationContainer >
     <StatusBar style="auto" />
     <Stack.Navigator  >
+
+    <Stack.Screen name="interview" component={Interview} options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+
+          
     <Stack.Screen name="lang" component={Language} options={() => ({
             tabBarStyle: {
               display: "none",
@@ -323,6 +335,7 @@ export default function App() {
             tabBarButton: () => null,
             headerShown: false,
           })} />
+         
               
     </Stack.Navigator>
   </NavigationContainer>

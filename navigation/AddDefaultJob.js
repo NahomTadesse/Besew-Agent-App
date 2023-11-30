@@ -9,7 +9,7 @@ export default function AddDefaultJob({navigation}){
     const [selectedIndex, setSelectedIndex] = useState(0)
     const MainCont =()=>{
    return(
-    <View style={{marginTop:10}}>
+    <View style={{marginTop:20}}>
 <Text style={{marginLeft:32,fontSize:14,color:"#30343F"}}>Enter Job Title</Text>
    <TextInput
        placeholder="Enter Job Title"
@@ -20,7 +20,8 @@ export default function AddDefaultJob({navigation}){
    />
 <Text style={{marginLeft:32,fontSize:14,color:"#30343F",marginTop:14}}>Job description</Text>
    <TextInput
-       placeholder="Write Job description"
+       placeholder="Write the job's description"
+       textAlignVertical="top"
        placeholderTextColor='#CBCBCB'
        label='Enter Job Title'
    style={{marginTop:5,width:320,height:126,alignSelf:'center',borderWidth:1,
@@ -28,14 +29,23 @@ export default function AddDefaultJob({navigation}){
    />
    <Text style={{marginLeft:32,fontSize:14,color:"#30343F",marginTop:14}}>Job description</Text>
    <TextInput
-       placeholder="Write Job description"
+       placeholder="Write the job's description"
+       textAlignVertical="top"
        placeholderTextColor='#CBCBCB'
        label='Enter Job Title'
    style={{marginTop:5,width:320,height:126,alignSelf:'center',borderWidth:1,
    borderColor:'#CDDFF7',padding:10}}
    />
+<View style={{marginLeft:30,marginTop:20,flexDirection:'row'}}>
+<TouchableOpacity>
+<Image
+source={require('../assets/add.png')}
+style={{width:30,height:30}}
+/>
+</TouchableOpacity>
 
-
+<Text style={{fontSize:14,color:"#30343F",textAlignVertical:"center",marginLeft:5}}>Add More</Text>
+</View>
     </View>
    )
     }
