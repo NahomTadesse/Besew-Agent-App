@@ -6,14 +6,14 @@ import { IndexPath, Layout, Select, SelectItem ,Input,Radio, RadioGroup,Toggle} 
 import { Pressable } from "react-native";
 import RangeSlider from 'rn-range-slider';
 import { Checkbox } from 'react-native-paper';
-
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function Match({navigation}){
     const [checked, setChecked] = React.useState(false);
     const [isnext , setIsNext] = useState(false)
     const [isSelected,setIsSelected] = useState(false)
-
+    const nav = useNavigation();
     // const obj = [
     //     'job Title','Education'
     // ]
@@ -148,12 +148,14 @@ const mainCont = ()=>{
     return(
         <ScrollView style={{backgroundColor:'white'}} contentContainerStyle={{ flexGrow: 1 }}>
    <View style={{flexDirection:'row',marginTop:42}}>
+   <TouchableOpacity onPress={()=>{nav.goBack()}}>
           <Image
-              style={
-                { width: 24, height: 24,marginLeft:20,marginTop:3}
-              }
-              source={require("../assets/arr.png")}
-            />
+                  style={
+                    { width: 24, height: 24,marginLeft:20,marginTop:3}
+                  }
+                  source={require("../assets/arr.png")}
+                />
+          </TouchableOpacity>
           <Text style={{color:"#273469",fontSize:18,fontWeight:'500',marginLeft:10}}>
             
      Matching

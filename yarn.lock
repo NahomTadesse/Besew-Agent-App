@@ -7118,6 +7118,11 @@ react-native-codegen@^0.70.6:
     jscodeshift "^0.14.0"
     nullthrows "^1.1.1"
 
+react-native-ethiopian-calendar@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-ethiopian-calendar/-/react-native-ethiopian-calendar-0.3.0.tgz#8ec9fda2a0d431a12f5094ad2d10edd3c3caf64c"
+  integrity sha512-WkQ/VF3C24Kmir2v+kU1mLNxvz9HLVeHPsHVk4otf6v2XntzoXsa44ZLc4+uI9vKjJMqUTIpifLL39AkstVsgQ==
+
 react-native-gesture-handler@~2.8.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-2.8.0.tgz#ef9857871c10663c95a51546225b6e00cd4740cf"
@@ -7175,6 +7180,11 @@ react-native-screens@~3.18.0:
   dependencies:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
+
+react-native-select-dropdown@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/react-native-select-dropdown/-/react-native-select-dropdown-3.4.0.tgz#3ce31dc2e5ffa1abf4c47e3297bf0da7144f1ea3"
+  integrity sha512-9xK1z4tYpwMxp3hsM0y1+xfqq/JoMh+l7sBsJ81b2eikFwT6ZbndFBqupQXrsQ1akce9hgC/10Nkzj0LjVjeXQ==
 
 react-native-star-rating-widget@^1.7.3:
   version "1.7.3"

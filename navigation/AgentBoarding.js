@@ -19,7 +19,7 @@ const secondN =()=>{
     setThird(true)
 }
 const thirdN =()=>{
-    navigation.navigate('home')
+    navigation.navigate('choose')
 }
     const firstScreen = ()=>{
 

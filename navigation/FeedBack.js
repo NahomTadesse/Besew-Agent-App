@@ -7,7 +7,7 @@ import { Pressable } from "react-native";
 import RangeSlider from 'rn-range-slider';
 import { Checkbox } from 'react-native-paper';
 
-
+import { useNavigation } from '@react-navigation/native';
 
 export default function FeedBack ({navigation}){
     const [checked, setChecked] = React.useState(false);
@@ -15,6 +15,8 @@ export default function FeedBack ({navigation}){
     const [isSelected,setIsSelected] = useState(false)
     const screenWidth = Dimensions.get('window').width
     const screenHeight = Dimensions.get('window').height
+
+    const nav = useNavigation();
 
 const mainCont = ()=>{
 
@@ -133,6 +135,7 @@ const mainCont = ()=>{
        
        <TextInput
        multiline={true}
+       textAlignVertical="top"
        style={{marginLeft:25,marginTop:10,marginBottom:20,width:324,height:114,borderWidth:1,borderColor:"#868686"}}
        placeholder="*Optional feedback"
        
@@ -143,12 +146,15 @@ const mainCont = ()=>{
     return(
         <ScrollView style={{backgroundColor:'white'}} contentContainerStyle={{ flexGrow: 1 }}>
         <View style={{flexDirection:'row',marginTop:42}}>
-              <Image
+          <TouchableOpacity onPress={()=>{nav.goBack()}}>
+          <Image
                   style={
                     { width: 24, height: 24,marginLeft:20,marginTop:3}
                   }
                   source={require("../assets/arr.png")}
                 />
+          </TouchableOpacity>
+             
               <Text style={{color:"#273469",fontSize:20,fontWeight:'500',marginLeft:10}}>Provide FeedBack</Text>
               <TouchableOpacity><Text style={{color:'green',fontSize:18,fontWeight:'500',marginTop:0,marginLeft:100}}>Save</Text></TouchableOpacity>
                 </View>

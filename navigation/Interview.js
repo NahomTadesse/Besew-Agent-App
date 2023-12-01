@@ -3,12 +3,15 @@ import { View , Button,Modal,Pressable,Image ,ScrollView,TextInput,Dimensions,To
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height
 import { IndexPath, Layout, Select, SelectItem ,Input,Radio, RadioGroup,Toggle} from '@ui-kitten/components';
+import SelectDropdown from 'react-native-select-dropdown'
 import StarRating from 'react-native-star-rating-widget';
 export default function Interview({navigation}){
     const [checked, setChecked] = React.useState(false);
     const [selectedIndex, setSelectedIndex] = useState(0)
     const [rating, setRating] = useState(0);
     const [showpop ,setShowPop] =useState(false)
+
+    const countries = ["1", "2", "3", "4"]
 
     const popUp = () => {
        
@@ -129,7 +132,7 @@ const save = ()=>{
 
                 <View style={{flex:1,flexDirection:"row",justifyContent:"space-between",marginTop:20}}>
                     <Text style={{fontSize:14,color:"#30343F",textAlignVertical:"center",marginLeft:20}}>Communication skills</Text>
-                    <Select
+                    {/* <Select
         selectedIndex={selectedIndex}
         placeholder="Employment Type"
         
@@ -139,35 +142,44 @@ const save = ()=>{
         <SelectItem title='1' />
         <SelectItem title='2' />
        
-      </Select>
+      </Select> */}
+<View style={{marginRight:25}}>
+<SelectDropdown
+	data={countries}
+  buttonStyle={{width:50,backgroundColor:'#CDDFF7',height:27}}
+	onSelect={(selectedItem, index) => {
+		console.log(selectedItem, index)
+	}}
+  defaultButtonText='1'
+/>
+</View>
                 </View>
                 <View style={{flex:1,flexDirection:"row",justifyContent:"space-between",marginTop:20}}>
                     <Text style={{fontSize:14,color:"#30343F",textAlignVertical:"center",marginLeft:20}}>Professionalism</Text>
-                    <Select
-        selectedIndex={selectedIndex}
-        placeholder="Employment Type"
-        
-        onSelect={index => setSelectedIndex(index)}
-        style={{width:50,alignSelf:"flex-end",backgroundColor:'white',marginRight:25}}
-      >
-        <SelectItem title='1' />
-        <SelectItem title='2' />
-       
-      </Select>
+                    <View style={{marginRight:25}}>
+<SelectDropdown
+	data={countries}
+  buttonStyle={{width:50,backgroundColor:'#CDDFF7',height:27}}
+	onSelect={(selectedItem, index) => {
+		console.log(selectedItem, index)
+	}}
+  defaultButtonText='1'
+/>
+</View>
                 </View>
                 <View style={{flex:1,flexDirection:"row",justifyContent:"space-between",marginTop:20}}>
                     <Text style={{fontSize:14,color:"#30343F",textAlignVertical:"center",marginLeft:20}}>Listening Skills</Text>
-                    <Select
-        selectedIndex={selectedIndex}
-        placeholder="Employment Type"
-        
-        onSelect={index => setSelectedIndex(index)}
-        style={{width:50,alignSelf:"flex-end",backgroundColor:'white',marginRight:25}}
-      >
-        <SelectItem title='1' />
-        <SelectItem title='2' />
-       
-      </Select>
+                    <View style={{marginRight:25}}>
+<SelectDropdown
+	data={countries}
+  buttonStyle={{width:50,backgroundColor:'#CDDFF7',height:27}}
+	onSelect={(selectedItem, index) => {
+		console.log(selectedItem, index)
+	}}
+  defaultButtonText='1'
+
+/>
+</View>
                 </View>
             </View>
         )

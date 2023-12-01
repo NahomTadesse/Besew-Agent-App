@@ -11,9 +11,12 @@ import HomeScreen from './navigation/HomeScreen';
 import DashBoard from './navigation/DashBoard'
 import Profile from './navigation/Profile';
 import Message from './navigation/Message'
+import PaymentPage from './navigation/PaymentPage';
 import AgentSearch from './navigation/AgentSearch';
 import Post from './navigation/Post';
+import NotificationDetails from './navigation/NotificationDetails';
 import Boarding from './navigation/Boarding';
+import SkillMatching from './navigation/SkillMatching';
 import AgentBoarding from './navigation/AgentBoarding';
 import TermsAndConditions from './navigation/TermsAndConditions';
 import Interview from './navigation/Interview';
@@ -30,6 +33,7 @@ import PostType from './navigation/PostType'
 import Comission from './navigation/Comission';
 import ReportEmployer from './navigation/ReportEmployer';
 import NotificationRing from './navigation/NotificationRing';
+import ChooseSpeciality from './navigation/ChooseSpeciality';
 import CandidatesList from './navigation/CandidatesList';
 import BottomNav from './navigation/BottomNav';
 import Match from './navigation/Match';
@@ -57,7 +61,51 @@ export default function App() {
     <NavigationContainer >
     <StatusBar style="auto" />
     <Stack.Navigator  >
+    <Stack.Screen name="lang" component={Language} options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
 
+    <Stack.Screen name="skillm" component={SkillMatching} options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+   <Stack.Screen name="ndetail" component={NotificationDetails} options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+
+
+
+    <Stack.Screen name="choose" component={ChooseSpeciality} options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+
+<Stack.Screen name="payment" component={PaymentPage} options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
     <Stack.Screen name="interview" component={Interview} options={() => ({
             tabBarStyle: {
               display: "none",
@@ -68,15 +116,7 @@ export default function App() {
           })} />
 
           
-    <Stack.Screen name="lang" component={Language} options={() => ({
-            tabBarStyle: {
-              display: "none",
-            },
-  
-            tabBarButton: () => null,
-            headerShown: false,
-          })} />
-
+   
       <Stack.Screen name="launch" component={LaunchScreen}
            options={() => ({
             tabBarStyle: {

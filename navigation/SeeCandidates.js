@@ -7,7 +7,7 @@ import { Pressable } from "react-native";
 import RangeSlider from 'rn-range-slider';
 import { Checkbox } from 'react-native-paper';
 
-
+import { useNavigation } from '@react-navigation/native';
 
 export default function SeeCandidate({navigation}){
     const [checked, setChecked] = React.useState(false);
@@ -18,7 +18,7 @@ export default function SeeCandidate({navigation}){
     const [isMatched , setIsMatched] = useState(true)
     // const [isSelected,setIsSelected] = useState(false)
 
-
+    const nav = useNavigation();
 const card=()=>{
 
 
@@ -301,12 +301,14 @@ const notMatched=()=>{
     return(
         <ScrollView style={{backgroundColor:'white'}} contentContainerStyle={{ flexGrow: 1 }}>
    <View style={{flexDirection:'row',marginTop:42}}>
+   <TouchableOpacity onPress={()=>{nav.goBack()}}>
           <Image
-              style={
-                { width: 24, height: 24,marginLeft:20,marginTop:3}
-              }
-              source={require("../assets/arr.png")}
-            />
+                  style={
+                    { width: 24, height: 24,marginLeft:20,marginTop:3}
+                  }
+                  source={require("../assets/arr.png")}
+                />
+          </TouchableOpacity>
           <Text style={{color:"#273469",fontSize:18,fontWeight:'500',marginLeft:10}}> 
           {isMatched ? 'Matched':'Not Matched'}
             </Text>

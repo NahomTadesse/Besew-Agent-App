@@ -6,7 +6,7 @@ import { IndexPath, Layout, Select, SelectItem ,Input,Radio, RadioGroup,Toggle} 
 import { Pressable } from "react-native";
 import RangeSlider from 'rn-range-slider';
 import { Checkbox } from 'react-native-paper';
-
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function MatchInterview({navigation}){
@@ -16,6 +16,7 @@ export default function MatchInterview({navigation}){
     const screenWidth = Dimensions.get('window').width
     const screenHeight = Dimensions.get('window').height
     const [isMatched , setIsMatched] = useState(true)
+    const nav = useNavigation();
     // const [isSelected,setIsSelected] = useState(false)
     const [showpop ,setShowPop] =useState(false)
 
@@ -238,12 +239,14 @@ style={{width:360,height:80,alignSelf:'center',borderBottomWidth:1,borderColor:'
     return(
         <ScrollView style={{backgroundColor:'white'}} contentContainerStyle={{ flexGrow: 1 }}>
    <View style={{flexDirection:'row',marginTop:42}}>
+   <TouchableOpacity onPress={()=>{nav.goBack()}}>
           <Image
-              style={
-                { width: 24, height: 24,marginLeft:20,marginTop:3}
-              }
-              source={require("../assets/arr.png")}
-            />
+                  style={
+                    { width: 24, height: 24,marginLeft:20,marginTop:3}
+                  }
+                  source={require("../assets/arr.png")}
+                />
+          </TouchableOpacity>
           <Text style={{color:"#273469",fontSize:18,fontWeight:'500',marginLeft:10}}> 
           Matching
             </Text>

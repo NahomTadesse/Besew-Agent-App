@@ -1,9 +1,11 @@
 import React from "react";
 import { View , Button ,Image ,ScrollView,TextInput,Dimensions,TouchableOpacity,Text } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 
 export default function Post({navigation}){
     const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height
+const nav = useNavigation();
 const next=()=>{
 
 }
@@ -25,12 +27,14 @@ style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'white'}}>Pos
     return(
         <ScrollView>
             <View style={{flexDirection:'row'}}>
-              <Image
+            <TouchableOpacity onPress={()=>{nav.goBack()}}>
+          <Image
                   style={
-                    { width: 70, height: 70,marginLeft:20,marginTop:20}
+                    { width: 24, height: 24,marginLeft:20,marginTop:3}
                   }
-                  source={require("../assets/profile10.png")}
+                  source={require("../assets/arr.png")}
                 />
+          </TouchableOpacity>
                 <View style={{width:151,height:21,marginLeft:10,alignSelf:'center',marginTop:10,backgroundColor:"#D9D9D9"}}></View>
                 </View>
             {MainCont()}

@@ -6,7 +6,7 @@ import { IndexPath, Layout, Select, SelectItem ,Input,Radio, RadioGroup,Toggle} 
 import { Pressable } from "react-native";
 import RangeSlider from 'rn-range-slider';
 import { Checkbox } from 'react-native-paper';
-
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function MatchingSecond({navigation}){
@@ -14,7 +14,7 @@ export default function MatchingSecond({navigation}){
     const [isnext , setIsNext] = useState(false)
     const [isSelected,setIsSelected] = useState(false)
     const [selectedIndex, setSelectedIndex] = useState(0)
-
+    const nav = useNavigation();
     // const obj = [
     //     'job Title','Education'
     // ]
@@ -23,41 +23,37 @@ const mainCont = ()=>{
     <View>
         <View style={{flexDirection:'row',marginLeft:20,marginTop:20}}>
     
-        <Select
+        <TouchableOpacity
                 // appearance={{c}}
-               placeholder='Experience'
+                onPress={()=>{navigation.navigate('skillm')}}
         selectedIndex={selectedIndex}
         onSelect={index => setSelectedIndex(index)}
-        style={{width:114,backgroundColor:'white',borderWidth:3,borderRadius:20,borderColor:"white"}}
+        style={{width:114,backgroundColor:'white',borderWidth:1,borderRadius:20,borderColor:"#273469",height:40}}
       >
-        <SelectItem title='A' />
-        <SelectItem title='E' />
+    <Text style={{alignSelf:"center",flex:1,textAlignVertical:"center"}}>Skill</Text>
        
-      </Select>
+      </TouchableOpacity>
           
-      <Select
+      <TouchableOpacity
                 // appearance={{c}}
-               placeholder='Status'
+            
         selectedIndex={selectedIndex}
         onSelect={index => setSelectedIndex(index)}
-        style={{width:114,backgroundColor:'white',borderWidth:3,borderRadius:20,borderColor:"white"}}
+        style={{width:114,backgroundColor:'white',borderWidth:1,borderRadius:20,borderColor:"#273469",height:40,marginLeft:5}}
       >
-        <SelectItem title='A' />
-        <SelectItem title='E' />
-       
-      </Select>
+   
+       <Text style={{alignSelf:"center",flex:1,textAlignVertical:"center"}}>Experience</Text>
+      </TouchableOpacity>
           
-      <Select
-                // appearance={{c}}
-               placeholder='Age'
+      <TouchableOpacity
+             
         selectedIndex={selectedIndex}
         onSelect={index => setSelectedIndex(index)}
-        style={{width:114,backgroundColor:'white',borderWidth:3,borderRadius:20,borderColor:"white"}}
+        style={{width:114,backgroundColor:'white',borderWidth:1,borderRadius:20,borderColor:"#273469",height:40,marginLeft:5}}
       >
-        <SelectItem title='A' />
-        <SelectItem title='B' />
        
-      </Select>
+       <Text style={{alignSelf:"center",flex:1,textAlignVertical:"center"}}>Age</Text>
+      </TouchableOpacity>
         </View>
 {/* <Text style={{fontSize:14,color:'#30343F',marginTop:18,marginLeft:30}}>Match Jobs</Text> */}
 
@@ -135,12 +131,14 @@ const mainCont = ()=>{
     return(
         <ScrollView style={{backgroundColor:'white'}} contentContainerStyle={{ flexGrow: 1 }}>
    <View style={{flexDirection:'row',marginTop:42}}>
+   <TouchableOpacity onPress={()=>{nav.goBack()}}>
           <Image
-              style={
-                { width: 24, height: 24,marginLeft:20,marginTop:3}
-              }
-              source={require("../assets/arr.png")}
-            />
+                  style={
+                    { width: 24, height: 24,marginLeft:20,marginTop:3}
+                  }
+                  source={require("../assets/arr.png")}
+                />
+          </TouchableOpacity>
           <Text style={{color:"#273469",fontSize:18,fontWeight:'500',marginLeft:10}}>
             
      Matching

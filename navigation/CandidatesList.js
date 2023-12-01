@@ -3,11 +3,68 @@ import { View , Button ,Image ,Modal,ScrollView,Pressable,TextInput,Dimensions,T
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height
 import { IndexPath, Layout, Select, SelectItem ,Input,Radio, RadioGroup,Toggle} from '@ui-kitten/components';
-
+import { Calendar } from 'react-native-ethiopian-calendar';
+import { useNavigation } from '@react-navigation/native';
 export default function CandidatesList({navigation}){
+
+  const [mode, setMode] = React.useState('EC');
+  const [locale, setLocale] = React.useState('AMH');
+  const [selectedDate, setSelectedDate] = React.useState();
+
     const [checked, setChecked] = React.useState(false);
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [showpop ,setShowPop] =useState(false)
+    const [showCalanderpop ,setShowCalanderPop] = useState(false)
+    const nav = useNavigation();
+const CalendarPopUp = ()=>{
+  return (
+    <View>
+      <Modal
+        transparent={true}
+        onRequestClose={() => {
+         setShowCalanderPop(false)
+        }}
+      >
+                 <Pressable
+                      onPress={(event) => event.target == event.currentTarget && setShowCalanderPop(false)}
+                      style={{ flex: 1, justifyContent: "center" }}>
+                      <View
+                        style={{
+                          // width: screenWidth / 1.1,
+                          alignSelf: "center",
+                          position: "relative",
+                       
+                      
+                          height:300
+                        }}
+                      >
+                       
+                          <Calendar
+                            hideHeaderButtons={true}
+                            mode={mode}
+                            onDatePress={(date) => {
+                            setShowCalanderPop(false)
+                           
+                              setSelectedDate(date)
+                            }}
+                            onModeChange={(selectedMode) => setMode(selectedMode)}
+                            onLanguageChange={(lang) => setLocale(lang)}
+                            locale={locale}
+                            theme={{
+                              switchButtonColor: "#f27f22",
+                              arrowColor: "#3c6791",
+                              selectedDayBackgroundColor: "#3c6791",
+                              todayTextColor: "#FF6A22",
+                            }}
+                          />
+                       
+                      </View>
+                    </Pressable>
+      </Modal>
+    </View>
+  );
+}
+
 
     const popUp = () => {
        
@@ -47,16 +104,18 @@ export default function CandidatesList({navigation}){
       </Select>
 
       <Text style={{fontSize:14,marginLeft:30,marginTop:10}}>Date</Text>
+      <TouchableOpacity onPress={()=>{setShowPop(false);setShowCalanderPop(true)}}
+      >
       <Input
             placeholder="Pick a date"
-      editable={false}
+     disabled={true}
             accessoryRight={renderIconRight}
+            
                 style={{
                     width:331,
                   height:40,
                   elevation: 5,
                   marginTop:10,
-                  borderWidth:1,
                   marginLeft:27,
                   backgroundColor:'white',
                   borderColor:"#CDDFF7",
@@ -64,7 +123,7 @@ export default function CandidatesList({navigation}){
                 }}
 
               />
-
+</TouchableOpacity>
 <TouchableOpacity
             onPress={()=>{setShowPop(false)}}
             style={{height:37,width:191,backgroundColor:'#3680E1',marginTop:40,
@@ -90,6 +149,17 @@ style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'white'}}>App
         </TouchableWithoutFeedback>
       )
       const renderIconRight = (props)=> (
+        <TouchableOpacity onPress={()=>{setShowCalanderPop(true)}}>
+        <Image
+                  style={
+                    { width: 16, height: 16}
+                  }
+                  source={require("../assets/cal.png")}
+                  
+                />
+        </TouchableOpacity>
+      )
+      const renderIconRightFil = (props)=> (
         <TouchableOpacity onPress={()=>{setShowPop(true)}}>
         <Image
                   style={
@@ -108,7 +178,7 @@ style={{flex:1,textAlignVertical:'center',alignSelf:"center",color:'white'}}>App
         <Input
             placeholder="Search"
             accessoryLeft={renderIcon}
-            accessoryRight={renderIconRight}
+            accessoryRight={renderIconRightFil}
                 style={{
                     width:300,
                   height:37,
@@ -193,12 +263,14 @@ marginBottom:20
     return(
 <ScrollView contentContainerStyle={{ flexGrow: 1 }} style={{backgroundColor:"white"}} >
 <View style={{flexDirection:'row',marginTop:42}}>
+<TouchableOpacity onPress={()=>{nav.goBack()}}>
           <Image
-              style={
-                { width: 24, height: 24,marginLeft:20,marginTop:3}
-              }
-              source={require("../assets/arr.png")}
-            />
+                  style={
+                    { width: 24, height: 24,marginLeft:20,marginTop:3}
+                  }
+                  source={require("../assets/arr.png")}
+                />
+          </TouchableOpacity>
           <Text style={{color:"#273469",fontSize:18,fontWeight:'500',marginLeft:10}}>
             
 Candidates
@@ -211,6 +283,10 @@ Candidates
       
       <View style={{bottom:0,position:"absolute",}}>
       {popUp()}
+      </View>}
+      {showCalanderpop &&
+      <View>
+      {CalendarPopUp()}
       </View>}
 </ScrollView>
     )
