@@ -10,8 +10,8 @@ export default function BottomNav({navigation}){
 
 
     return(
-        <ScrollView contentContainerStyle={{ flexGrow: 1 }} style={{backgroundColor:"#68A0E8",height:64}}>
-<View style={{flex:1,flexDirection:"row",bottom:0,position:'absolute',marginTop:10,}}>
+        <ScrollView contentContainerStyle={{ flexGrow: 1 }} style={{backgroundColor:"white",height:64}}>
+<View style={{flex:1,flexDirection:"row",bottom:0,position:'absolute',marginTop:10,backgroundColor:"#68A0E8",width:screenWidth}}>
 
 <TouchableOpacity onPress={()=>{navigation.navigate('home')}} style={{marginLeft:30,justifyContent:"center",marginBottom:10}}>
 <Image
@@ -25,9 +25,9 @@ export default function BottomNav({navigation}){
 <TouchableOpacity onPress={()=>{navigation.navigate('job')}} style={{marginLeft:15,justifyContent:"center",marginBottom:10}}>
 <Image
                   style={
-                    { width: 24, height: 24,marginTop:10,marginLeft:15}
+                    { width: 20, height: 20,marginTop:13,marginLeft:15}
                   }
-                  source={require("../assets/p.png")}
+                  source={require("../assets/plus.png")}
                 />
     <Text style={{fontSize:12,color:"white",marginLeft:15 }}>Job</Text></TouchableOpacity>
 

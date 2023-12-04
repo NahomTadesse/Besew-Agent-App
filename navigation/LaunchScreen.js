@@ -8,7 +8,7 @@ const screenHeight = Dimensions.get('window').height
 export default function LaunchScreen({navigation}){
 
     const logIn =()=>{
-        // navigation.navigate('login')
+        navigation.navigate('login')
     }
     const signUp =()=>{
         navigation.navigate('terms')

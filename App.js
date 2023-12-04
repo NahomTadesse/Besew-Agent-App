@@ -12,6 +12,7 @@ import DashBoard from './navigation/DashBoard'
 import Profile from './navigation/Profile';
 import Message from './navigation/Message'
 import PaymentPage from './navigation/PaymentPage';
+import EmployeeList from './navigation/EmployeeList';
 import AgentSearch from './navigation/AgentSearch';
 import Post from './navigation/Post';
 import NotificationDetails from './navigation/NotificationDetails';
@@ -87,6 +88,15 @@ export default function App() {
             headerShown: false,
           })} />
 
+<Stack.Screen name="elist" component={EmployeeList} options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
+
 
 
     <Stack.Screen name="choose" component={ChooseSpeciality} options={() => ({
@@ -127,8 +137,14 @@ export default function App() {
             headerShown: false,
           })}
       />
-      <Stack.Screen name="login" component={LogIn}  options={{title:'Log-In'}}
-     />
+      <Stack.Screen name="login" component={LogIn} options={() => ({
+            tabBarStyle: {
+              display: "none",
+            },
+  
+            tabBarButton: () => null,
+            headerShown: false,
+          })} />
       <Stack.Screen name="signup" component={SignUp}     options={() => ({
             tabBarStyle: {
               display: "none",
